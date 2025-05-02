@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - AppointmentApp</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+            @if (User.IsInRole("Admin"))
+            {
+                <a asp-area="Admin" asp-controller="AdminAppointments" asp-action="Index">
+                    Admin Panel
+                </a>
+            }
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-area="" asp-controller="Appointments" asp-action="Index">Randevularım</a>
+                <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+                    <button type="submit">Çıkış</button>
+                </form>
+            }
+            else
+            {
+                <a asp-area="" asp-controller="Account" asp-action="Login">Giriş</a>
+                <a asp-area="" asp-controller="Account" asp-action="Register">Kayıt</a>
+            }
+        </nav>
+    </header>
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+</body>
+</html>

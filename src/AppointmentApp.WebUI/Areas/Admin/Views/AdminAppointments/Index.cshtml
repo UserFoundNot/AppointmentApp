@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AppointmentApp.Core.Entities.Appointment>
+
+@{
+    ViewData["Title"] = "Tüm Randevular (Admin)";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kullanıcı</th>
+            <th>Tarih</th>
+            <th>Başlık</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.User?.Email</td>
+                <td>@a.Date.ToString("g")</td>
+                <td>@a.Title</td>
+                <td>
+                    <a asp-area="Admin"
+                       asp-controller="AdminAppointments"
+                       asp-action="Edit"
+                       asp-route-id="@a.Id"
+                       class="btn btn-sm btn-primary">Düzenle</a>
+                </td>
+                <td>
+                    <a asp-area="Admin"
+                       asp-controller="AdminAppointments"
+                       asp-action="Delete"
+                       asp-route-id="@a.Id"
+                       class="btn btn-sm btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

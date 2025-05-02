@@ -1,0 +1,17 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build
+bin/
+obj/
+
+# SQLite dosyası
+appointments.db
+
+# Rider
+.idea/
+
+# Resharper
+_ReSharper*/

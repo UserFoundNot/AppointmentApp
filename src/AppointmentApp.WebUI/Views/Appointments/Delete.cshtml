@@ -1,0 +1,21 @@
+﻿@model AppointmentApp.Core.Entities.Appointment
+
+@{
+    ViewData["Title"] = "Randevuyu Sil";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Bu randevuyu silmek istediğinize emin misiniz?</h4>
+
+<div class="mb-3">
+    <p><strong>Başlık:</strong> @Model.Title</p>
+    <p><strong>Tarih:</strong> @Model.Date.ToString("g")</p>
+    <p><strong>Açıklama:</strong> @Model.Description</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>
