@@ -22,12 +22,10 @@ ASP.NET Core MVC tabanlı basit bir randevu yönetim sistemi.
 
     dotnet run --project src/AppointmentApp.WebUI
 
-    Tarayıcıda https://localhost:5001 (veya konsolda görünen URL) adresini açın.
+    Tarayıcıda https://localhost:#### (konsolda görünen URL) adresini açın.
 
     Admin Paneli için rol atayın
-	AppointmentApp.WebUI altında program.cs içinde 
-	"var adminEmail = "2200001590@stu.iku.edu.tr";" admin hesabının atamasını yapan satırdır.
-	Dilerseniz bu kullanıcıyla devam edebilirsiniz (password:Grand18.) ya da kod tabanında kullanıcı değiştirebilirsiniz.
+	Kullanıcı ile kayıt olup giriş yaptıktan sonra https://localhost:####/MakeMeAdmin ile kullanıcıyı admin yapabilirsiniz.
 
 # Kullanılan Teknolojiler
     .NET 7 & ASP.NET Core MVC
